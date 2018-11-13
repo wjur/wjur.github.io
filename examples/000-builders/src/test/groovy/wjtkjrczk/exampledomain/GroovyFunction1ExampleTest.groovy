@@ -3,7 +3,6 @@ package wjtkjrczk.exampledomain
 import spock.lang.Specification
 
 import static java.time.Instant.parse
-
 import static wjtkjrczk.exampledomain.builders.DomainObjectGroovyFunction1Builder.domainObject
 
 class GroovyFunction1ExampleTest extends Specification {
@@ -15,7 +14,7 @@ class GroovyFunction1ExampleTest extends Specification {
             it.id = 1337
             it.name = "Some name"
 
-            // Note that it uses a setter method. IntelliJ argues about the type, but it compiles.
+            // Note that it uses a setter method.
             it.updatedAt = "2018-04-14T23:10:16.123Z"
         }
 

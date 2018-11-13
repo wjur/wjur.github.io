@@ -25,7 +25,7 @@ class DomainObjectGroovyDelegatedClosureBuilder {
         )
     }
 
-    def setUpdatedAt(String value) {
+    void setUpdatedAt(String value) {
         updatedAt = Instant.parse(value)
     }
 

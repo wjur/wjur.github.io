@@ -22,9 +22,5 @@ class DomainObjectKotlinBuilder {
     }
 }
 
-fun domainObject(init: DomainObjectKotlinBuilder.() -> Unit): DomainObject {
-    val builder = DomainObjectKotlinBuilder()
-    init(builder)
-
-    return builder.build()
-}
+fun domainObject(init: DomainObjectKotlinBuilder.() -> Unit): DomainObject =
+        DomainObjectKotlinBuilder().apply(init).build()

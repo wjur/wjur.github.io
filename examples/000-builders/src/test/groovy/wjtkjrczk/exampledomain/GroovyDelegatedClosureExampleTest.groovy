@@ -3,7 +3,7 @@ package wjtkjrczk.exampledomain
 import spock.lang.Specification
 
 import static java.time.Instant.parse
-import static wjtkjrczk.exampledomain.builders.DomainObjectGroovyDelegatedClosureBuilder.*
+import static wjtkjrczk.exampledomain.builders.DomainObjectGroovyDelegatedClosureBuilder.domainObject
 
 class GroovyDelegatedClosureExampleTest extends Specification {
 
@@ -13,7 +13,7 @@ class GroovyDelegatedClosureExampleTest extends Specification {
             id = 1337
             name = "Some name"
 
-            // Note that it uses a setter method. IntelliJ argues about the type, but it compiles.
+            // Note that it uses a setter method.
             updatedAt = "2018-04-14T23:10:16.123Z"
 
             // If you don't remember fields' names, you can refer to the delegate variable to see hints.
