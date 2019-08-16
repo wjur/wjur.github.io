@@ -1,0 +1,52 @@
+plugins {
+    id 'groovy'
+    id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.70'
+    id 'org.jetbrains.kotlin.plugin.spring' version '1.2.70'
+    id 'org.jetbrains.kotlin.plugin.allopen' version '1.2.70'
+    id 'idea'
+}
+
+apply plugin: 'idea'
+
+
+sourceCompatibility = 1.8
+
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web:2.1.7.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-cache:2.0.5.RELEASE'
+
+    compile 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.41'
+    compile 'com.fasterxml.jackson.module:jackson-module-afterburner:2.9.9'
+    compile 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.9'
+    compile 'io.netty:netty-all:4.1.27.Final' //Netty is used by reactive mongo for I/O
+
+
+    compile 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive:2.1.7.RELEASE'
+
+    testCompile 'org.spockframework:spock-core:1.2-groovy-2.4'
+    testCompile 'cglib:cglib-nodep:3.2.5'
+    testCompile 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.1.1'
+    testCompile 'org.objenesis:objenesis:2.6'
+
+
+    testCompile 'org.spockframework:spock-spring:1.2-groovy-2.4'
+    testCompile 'org.springframework:spring-test:5.0.5.RELEASE'
+    testCompile 'org.springframework.boot:spring-boot-starter-test:2.0.1.RELEASE'
+    testCompile 'com.jayway.jsonpath:json-path:2.4.0'
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.10.2'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = 1.8
+}

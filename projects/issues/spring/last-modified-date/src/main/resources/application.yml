@@ -1,0 +1,8 @@
+application.name: test-app
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  data.mongodb:
+    uri: mongodb://localhost:31337/badger_publisher?${mongo.options}
+    database: badger_publisher
